@@ -24,6 +24,7 @@
     "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
     "test": "pnpm lint && pnpm test:types && vitest run --coverage",
     "test:types": "tsc --noEmit --skipLibCheck",
+    "format": "prettier --write .",
     "playground": "node --env-file=.env playground/index.js"
   },
   "devDependencies": {

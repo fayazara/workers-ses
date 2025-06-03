@@ -41,13 +41,13 @@ Import:
 **ESM** (Node.js, Bun, Deno)
 
 ```js
-import { SESClient, SendEmailCommand } from "workers-ses";
+import { SESClient, SendEmailCommand } from 'workers-ses'
 ```
 
 **CDN** (Deno, Bun and Browsers)
 
 ```js
-import { SESClient, SendEmailCommand } from "https://esm.sh/workers-ses";
+import { SESClient, SendEmailCommand } from 'https://esm.sh/workers-ses'
 ```
 
 <!-- /automd -->
