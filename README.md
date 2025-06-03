@@ -52,6 +52,80 @@ import { SESClient, SendEmailCommand } from 'https://esm.sh/workers-ses'
 
 <!-- /automd -->
 
+## Usage Example
+
+```js
+import { SESClient, SendEmailCommand } from 'workers-ses'
+
+// Configure the SES client
+const config = {
+  region: 'us-east-1', // Your AWS region
+  credentials: {
+    accessKeyId: 'YOUR_ACCESS_KEY_ID',
+    secretAccessKey: 'YOUR_SECRET_ACCESS_KEY',
+  },
+}
+
+// Initialize the SES client
+const sesClient = new SESClient(config)
+
+// Define email parameters
+const emailParams = {
+  Source: 'sender@example.com', // Must be a verified email address
+  Destination: {
+    ToAddresses: ['recipient@example.com'],
+    // Optional: CcAddresses and BccAddresses
+    // CcAddresses: ["cc@example.com"],
+    // BccAddresses: ["bcc@example.com"],
+  },
+  Message: {
+    Subject: {
+      Data: 'Hello from Workers SES!',
+    },
+    Body: {
+      Text: {
+        Data: 'This is a plain text email sent using workers-ses library.',
+      },
+      Html: {
+        Data: '<h1>Hello!</h1><p>This is an <strong>HTML email</strong> sent using workers-ses library.</p>',
+      },
+    },
+  },
+}
+
+// Send the email
+try {
+  const command = new SendEmailCommand(emailParams)
+  const result = await sesClient.send(command)
+
+  console.log('Email sent successfully!')
+  console.log('Message ID:', result.MessageId)
+} catch (error) {
+  console.error('Error sending email:', error)
+}
+```
+
+### Configuration Options
+
+- **region**: AWS region where your SES service is configured (e.g., `us-east-1`, `eu-west-1`)
+- **credentials**: AWS credentials with SES permissions
+  - **accessKeyId**: Your AWS access key ID
+  - **secretAccessKey**: Your AWS secret access key
+
+### Email Parameters
+
+- **Source**: The sender's email address (must be verified in AWS SES)
+- **Destination**: Recipient information
+  - **ToAddresses**: Array of recipient email addresses
+  - **CcAddresses**: (Optional) Array of CC recipient email addresses
+  - **BccAddresses**: (Optional) Array of BCC recipient email addresses
+- **Message**: Email content
+  - **Subject.Data**: Email subject line
+  - **Body.Text.Data**: Plain text version of the email
+  - **Body.Html.Data**: HTML version of the email
+
+> **Note**: Before sending emails, make sure your sender email address is verified in AWS SES, and if you're in the SES sandbox, recipient addresses must also be verified.
+
 ## Development
 
 <details>
