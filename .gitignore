@@ -6,3 +6,6 @@ dist
 .eslintcache
 *.log*
 *.env*
+
+# Playground folder for testing
+/playground 

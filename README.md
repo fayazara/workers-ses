@@ -1,13 +1,13 @@
-# packageName
+# workers-ses
 
 <!-- automd:badges color=yellow -->
 
-[![npm version](https://img.shields.io/npm/v/packageName?color=yellow)](https://npmjs.com/package/packageName)
-[![npm downloads](https://img.shields.io/npm/dm/packageName?color=yellow)](https://npm.chart.dev/packageName)
+[![npm version](https://img.shields.io/npm/v/workers-ses?color=yellow)](https://npmjs.com/package/workers-ses)
+[![npm downloads](https://img.shields.io/npm/dm/workers-ses?color=yellow)](https://npm.chart.dev/workers-ses)
 
 <!-- /automd -->
 
-This is my package description.
+AWS SES client for Cloudflare Workers. 1:1 mapping of AWS SES API based on [aws4fetch](https://github.com/mhart/aws4fetch).
 
 ## Usage
 
@@ -15,7 +15,23 @@ Install the package:
 
 ```sh
 # ✨ Auto-detect (supports npm, yarn, pnpm, deno and bun)
-npx nypm install packageName
+npx nypm install workers-ses
+
+# or
+
+npm install workers-ses
+
+# or
+
+yarn add workers-ses
+
+# or
+
+pnpm add workers-ses
+
+# or
+
+bun add workers-ses
 ```
 
 Import:
@@ -25,13 +41,13 @@ Import:
 **ESM** (Node.js, Bun, Deno)
 
 ```js
-import {} from "pkg";
+import { SESClient, SendEmailCommand } from "workers-ses";
 ```
 
 **CDN** (Deno, Bun and Browsers)
 
 ```js
-import {} from "https://esm.sh/pkg";
+import { SESClient, SendEmailCommand } from "https://esm.sh/workers-ses";
 ```
 
 <!-- /automd -->
@@ -54,10 +70,10 @@ import {} from "https://esm.sh/pkg";
 
 <!-- automd:contributors license=MIT -->
 
-Published under the [MIT](https://github.com/unjs/packageName/blob/main/LICENSE) license.
-Made by [community](https://github.com/unjs/packageName/graphs/contributors) 💛
+Published under the [MIT](https://github.com/fayazara/workers-ses/blob/main/LICENSE) license.
+Made by [community](https://github.com/fayazara/workers-ses/graphs/contributors) 💛
 <br><br>
-<a href="https://github.com/unjs/packageName/graphs/contributors">
+<a href="https://github.com/fayazara/workers-ses/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=unjs/packageName" />
 </a>
 
