@@ -41,13 +41,13 @@ Import:
 **ESM** (Node.js, Bun, Deno)
 
 ```js
-import { SESClient, SendEmailCommand } from 'workers-ses'
+import {} from 'pkg'
 ```
 
 **CDN** (Deno, Bun and Browsers)
 
 ```js
-import { SESClient, SendEmailCommand } from 'https://esm.sh/workers-ses'
+import {} from 'https://esm.sh/pkg'
 ```
 
 <!-- /automd -->
@@ -148,7 +148,7 @@ Published under the [MIT](https://github.com/fayazara/workers-ses/blob/main/LICE
 Made by [community](https://github.com/fayazara/workers-ses/graphs/contributors) 💛
 <br><br>
 <a href="https://github.com/fayazara/workers-ses/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=unjs/packageName" />
+<img src="https://contrib.rocks/image?repo=fayazara/workers-ses" />
 </a>
 
 <!-- /automd -->
