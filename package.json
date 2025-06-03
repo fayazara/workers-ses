@@ -1,6 +1,6 @@
 {
   "name": "workers-ses",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "AWS SES client for Cloudflare Workers",
   "repository": "fayazara/workers-ses",
   "license": "MIT",
